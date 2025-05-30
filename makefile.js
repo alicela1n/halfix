@@ -29,7 +29,7 @@ for (var i = 0; i < files.length; i++) {
 }
 
 var bits = os.arch() === "x64" ? 64 : 32; // Add your architecture here!
-var flags = ["-Wall", "-Wextra", "-Werror", "-g3", "-std=c99"];
+var flags = ["-Wall", "-Wextra", "-Werror", "-Wno-unused-but-set-variable", "-g3", "-std=c99"];
 var end_flags = [], fincc_flags = [];
 
 if (fs.existsSync("/opt/homebrew/include") == true) {
