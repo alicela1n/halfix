@@ -33,7 +33,7 @@ var flags = ["-Wall", "-Wextra", "-Werror", "-Wno-unused-but-set-variable", "-g3
 var end_flags = [], fincc_flags = [];
 
 if (fs.existsSync("/opt/homebrew/include") == true) {
-    flags.push.apply(flags, "-I/opt/homebrew/include".split(" "));
+    flags.push.apply(flags, "-I/opt/homebrew/include -L/opt/homebrew/lib".split(" "));
 }
 
 // flags.push.apply(flags, "-I/usr/include/SDL -D_GNU_SOURCE=1
