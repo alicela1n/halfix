@@ -132,10 +132,12 @@ void util_debug(void)
 {
     display_release_mouse();
 #ifndef EMSCRIPTEN
+#ifdef __amd64__
     __asm__("int3");
 #else
     printf("Breakpoint reached -- aborting\n");
     abort();
+#endif
 #endif
 }
 void util_abort(void)

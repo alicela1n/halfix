@@ -623,8 +623,10 @@ OPTYPE op_into(struct decoded_instruction* i)
 {
 #if 1
 #ifndef EMSCRIPTEN
+#ifdef __amd64__
     __asm__("int3");
     NEXT2(i->flags);
+#endif
 #endif
 #endif
     if (cpu_get_of()) {
