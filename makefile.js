@@ -32,6 +32,10 @@ var bits = os.arch() === "x64" ? 64 : 32; // Add your architecture here!
 var flags = ["-Wall", "-Wextra", "-Werror", "-g3", "-std=c99"];
 var end_flags = [], fincc_flags = [];
 
+if (fs.existsSync("/opt/homebrew/include") == true) {
+    flags.push.apply(flags, "-I/opt/homebrew/include".split(" "));
+}
+
 // flags.push.apply(flags, "-I/usr/include/SDL -D_GNU_SOURCE=1
 // -D_REENTRANT".split(" "));
 // flags.push.apply(flags, "-L/usr/lib/x86_64-linux-gnu -lSDL -lSDLmain".split("
